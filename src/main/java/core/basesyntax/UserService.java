@@ -8,30 +8,13 @@ import java.util.regex.Pattern;
 public class UserService {
 
     public int getUserScore(String[] records, String email) throws UserNotFoundException {
-        boolean isContain = false;
-        String neededRecord = "";
-        for (String record:
-             records) {
-            if (record.contains(email)) {
-                isContain = true;
-                neededRecord = record;
-            }
+        String[][] data = new String[records.length][2];
+        for (int i = 0; i < records.length; i++) {
+            data[i][0] = records[i].split(":")[0];
+            data[i][1] = records[i].split(":")[1];
         }
-        if (isContain == false || !isValidEmail(email)) {
-            throw new UserNotFoundException("User with given email doesn't exist");
-        }
-        String[] emailScore = neededRecord.split(":");
-        return Integer.parseInt(emailScore[1]);
-    }
 
-    private static boolean isValidEmail(String email)
-    {
-        if (email != null)
-        {
-            Pattern p = Pattern.compile("^[A-Za-z].*?@gmail\\.com$");
-            Matcher m = p.matcher(email);
-            return m.find();
-        }
-        return false;
+
+        return 0;
     }
 }
