@@ -37,7 +37,7 @@ public class UserServiceTest {
     }
 
     @Test
-    public void getUserScore_validCase() throws UserNotFoundException {
+    public void getUserScore_validCase() {
         Assert.assertEquals("Wrong score for user with email mortimer@mail.us",
             53, userService.getUserScore(basicRecords, "mortimer@mail.us"));
         Assert.assertEquals("Wrong score for user with email rick@yahoo.com",
