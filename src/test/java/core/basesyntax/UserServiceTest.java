@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-import exception.UserNotFoundException;
+import core.basesyntax.exception.UserNotFoundException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Rule;
@@ -31,7 +31,7 @@ public class UserServiceTest {
             expectedEx.expect((Class<? extends RuntimeException>) exceptionClass);
             expectedEx.expectMessage("User with given email doesn't exist");
             userService.getUserScore(EMPTY_ARRAY, "vincent@mail.us");
-        } catch (ClassNotFoundException | UserNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             Assert.fail("Should create a class called 'UserNotFoundException'.");
         }
     }
@@ -63,7 +63,7 @@ public class UserServiceTest {
             expectedEx.expect((Class<? extends RuntimeException>) exceptionClass);
             expectedEx.expectMessage("User with given email doesn't exist");
             userService.getUserScore(singleElementArray, "carl@mail.com:30");
-        } catch (ClassNotFoundException | UserNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             Assert.fail("Should throw exception whenever user with given email doesn't exist");
         }
     }

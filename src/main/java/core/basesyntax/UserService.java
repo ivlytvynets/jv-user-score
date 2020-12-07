@@ -1,6 +1,6 @@
 package core.basesyntax;
 
-import exception.UserNotFoundException;
+import core.basesyntax.exception.UserNotFoundException;
 
 public class UserService {
 
