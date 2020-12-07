@@ -1,6 +1,5 @@
 package core.basesyntax;
 
-import core.basesyntax.exception.UserNotFoundException;
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Rule;
